@@ -16,17 +16,17 @@
   <link rel="stylesheet" href="assets/css/variables.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body data-faq="stage">
 
   <!-- ====================================================================
        HEADER
        ==================================================================== -->
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="logo" href="index.html" aria-label="Ynov — retour à l'accueil de la FAQ">
+      <div class="logo">
         <!-- Logo officiel : pour le changer, remplace le fichier assets/img/logo-ynov.png -->
         <img src="assets/img/logo-ynov.png" alt="Ynov" width="395" height="149">
-      </a>
+      </div>
       <a class="btn btn--light" href="alternance.html">FAQ Alternance →</a>
     </div>
   </header>
@@ -56,9 +56,15 @@
          MENU DES CATÉGORIES + RECHERCHE
          Chaque pastille pointe vers l'id d'un groupe plus bas (#avant, #trouve…)
          ================================================================== -->
+    <!-- La barre de catégories reste collée en haut uniquement dans la zone des questions -->
+    <div class="faq-wrap">
     <nav class="faq-toolbar" aria-label="Catégories de la FAQ">
       <div class="container faq-toolbar__inner">
-        <ul class="chips">
+        <div class="chips-scroller is-start" data-chips-scroller>
+          <button class="chips-scroller__btn chips-scroller__btn--prev" type="button" aria-label="Voir les catégories précédentes" data-chips-prev>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <ul class="chips">
           <li><a class="chip" href="#avant">Avant de chercher</a></li>
           <li><a class="chip" href="#trouve">J'ai trouvé mon stage</a></li>
           <li><a class="chip" href="#convention">Ma convention</a></li>
@@ -66,6 +72,10 @@
           <li><a class="chip" href="#apres">Après mon stage</a></li>
           <li><a class="chip" href="#difficulte">Une difficulté ?</a></li>
         </ul>
+          <button class="chips-scroller__btn chips-scroller__btn--next" type="button" aria-label="Voir les catégories suivantes" data-chips-next>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+        </div>
         <div class="search">
           <label class="visually-hidden" for="faq-search">Rechercher une question</label>
           <svg class="search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
@@ -459,6 +469,8 @@
 
       </div>
     </section>
+    </div><!-- /.faq-wrap -->
+
 
     <!-- ==================================================================
          BESOIN D'AIDE + CONTACTS
@@ -468,18 +480,11 @@
       <div class="container">
         <h2>Besoin d'aide ?</h2>
         <p class="help__lead">
-          Tu n'as pas trouvé ta réponse ? Écris-nous en précisant ces informations :
-          on pourra t'aider plus vite.
+          Tu n'as pas trouvé ta réponse ? Contacte le service Relations Entreprises.
         </p>
-        <ol class="help__checklist">
-          <li>Ton nom et prénom</li>
-          <li>Ta filière</li>
-          <li>Ta question ou ton problème</li>
-          <li>Les démarches déjà effectuées</li>
-          <li>Les éventuels documents concernés</li>
-        </ol>
-
-        <h3 class="contacts__title">Le service Relations Entreprises</h3>
+        <p class="help__hint">
+          Clique sur une adresse : ton mail s'ouvre avec les informations à compléter.
+        </p>
         <div class="contacts" data-contacts></div>
         <noscript>
           <p>Contact : mathieu.faivret@ynov.com</p>
@@ -503,6 +508,11 @@
       <p class="site-footer__copy">© Ynov Montpellier — Service Relations Entreprises</p>
     </div>
   </footer>
+
+  <!-- Bouton retour en haut (apparaît après un peu de défilement) -->
+  <a class="back-to-top" href="#" aria-label="Remonter en haut de la page" data-back-to-top>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </a>
 
   <script src="assets/js/contacts.js"></script>
   <script src="assets/js/faq.js"></script>

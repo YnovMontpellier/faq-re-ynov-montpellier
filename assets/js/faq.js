@@ -5,6 +5,8 @@
    2. Ouverture automatique via un lien (#id-de-la-question)
    3. Recherche dans les questions
    4. Pastille de catégorie active pendant le défilement
+   5. Flèches de défilement des pastilles (mobile)
+   6. Bouton « retour en haut »
 
    Tu n'as normalement pas besoin de modifier ce fichier :
    les questions se gèrent directement dans stage.html / alternance.html.
@@ -107,5 +109,55 @@
     }, { rootMargin: "-30% 0px -60% 0px" });
 
     groups.forEach(function (group) { observer.observe(group); });
+  }
+
+  /* ---------- 5. Flèches de défilement des pastilles ---------- */
+  var scroller = document.querySelector("[data-chips-scroller]");
+  if (scroller) {
+    var list = scroller.querySelector(".chips");
+    var prev = scroller.querySelector("[data-chips-prev]");
+    var next = scroller.querySelector("[data-chips-next]");
+
+    // Affiche / masque les flèches selon la position
+    function updateArrows() {
+      var max = list.scrollWidth - list.clientWidth;
+      scroller.classList.toggle("is-scrollable", max > 4);
+      scroller.classList.toggle("is-start", list.scrollLeft <= 4);
+      scroller.classList.toggle("is-end", list.scrollLeft >= max - 4);
+    }
+
+    function scrollChips(direction) {
+      list.scrollBy({ left: direction * list.clientWidth * 0.7, behavior: reduceMotion ? "auto" : "smooth" });
+    }
+
+    prev.addEventListener("click", function () { scrollChips(-1); });
+    next.addEventListener("click", function () { scrollChips(1); });
+    list.addEventListener("scroll", updateArrows, { passive: true });
+    window.addEventListener("resize", updateArrows);
+    updateArrows();
+
+    // Petit mouvement au chargement pour montrer qu'on peut faire glisser
+    if (!reduceMotion && list.scrollWidth > list.clientWidth) {
+      setTimeout(function () {
+        list.scrollBy({ left: 60, behavior: "smooth" });
+        setTimeout(function () { list.scrollBy({ left: -60, behavior: "smooth" }); }, 450);
+      }, 700);
+    }
+  }
+
+  /* ---------- 6. Bouton « retour en haut » ---------- */
+  var backToTop = document.querySelector("[data-back-to-top]");
+  if (backToTop) {
+    function toggleBackToTop() {
+      backToTop.classList.toggle("is-visible", window.scrollY > 500);
+    }
+    window.addEventListener("scroll", toggleBackToTop, { passive: true });
+    toggleBackToTop();
+
+    backToTop.addEventListener("click", function (event) {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+      history.replaceState(null, "", window.location.pathname);
+    });
   }
 })();

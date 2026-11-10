@@ -7,7 +7,8 @@
    Pour modifier une personne : change le texte entre guillemets.
    Pour ajouter une photo : dépose-la dans assets/img/equipe/
       puis indique son chemin dans "photo", ex. "assets/img/equipe/juliette-loncle.jpg"
-      (format carré conseillé, 300 x 300 px). Sans photo, les initiales s'affichent.
+      (format carré conseillé, 400 x 400 px). Sans photo, les initiales s'affichent.
+   Le texte du mail pré-rempli se modifie juste en dessous de la liste (MAIL_TEXTE).
    Pour ajouter un bouton de prise de rendez-vous : remplis "rdv" avec le lien.
    ========================================================================== */
 
@@ -42,6 +43,26 @@ var CONTACTS = [
 ];
 
 /* --------------------------------------------------------------------------
+   MAIL PRÉ-REMPLI
+   Quand on clique sur une adresse, le mail s'ouvre avec cet objet et ce texte.
+   {prenom} est remplacé par le prénom du contact,
+   {sujet} par "stage" ou "alternance" selon la page.
+   -------------------------------------------------------------------------- */
+var MAIL_OBJET = "Question {sujet} — FAQ Relations Entreprises";
+
+var MAIL_TEXTE = [
+  "Bonjour {prenom},",
+  "",
+  "Nom et prénom : ",
+  "Filière : ",
+  "Ma question ou mon problème : ",
+  "Démarches déjà effectuées : ",
+  "Documents concernés (à joindre si besoin) : ",
+  "",
+  "Merci et bonne journée,"
+].join("\n");
+
+/* --------------------------------------------------------------------------
    Affichage des cartes — pas besoin de modifier en dessous
    -------------------------------------------------------------------------- */
 (function () {
@@ -61,12 +82,16 @@ var CONTACTS = [
     var initials = (c.prenom.charAt(0) + c.nom.charAt(0)).toUpperCase();
 
     var visual = c.photo
-      ? '<img class="contact-card__photo" src="' + escape(c.photo) + '" alt="Photo de ' + escape(fullName) + '" loading="lazy" width="64" height="64">'
+      ? '<img class="contact-card__photo" src="' + escape(c.photo) + '" alt="Photo de ' + escape(fullName) + '" width="72" height="72">'
       : '<span class="contact-card__initials" aria-hidden="true">' + escape(initials) + "</span>";
 
     var actions = "";
     if (c.email) {
-      actions += '<a class="btn" href="mailto:' + escape(c.email) + '">' + escape(c.email) + "</a>";
+      var sujet = document.body.getAttribute("data-faq") || "stage ou alternance";
+      var mailto = "mailto:" + c.email +
+        "?subject=" + encodeURIComponent(MAIL_OBJET.replace("{sujet}", sujet)) +
+        "&body=" + encodeURIComponent(MAIL_TEXTE.replace("{prenom}", c.prenom));
+      actions += '<a class="btn" href="' + escape(mailto) + '">' + escape(c.email) + "</a>";
     }
     if (c.rdv) {
       actions += '<a class="btn btn--outline" href="' + escape(c.rdv) + '" target="_blank" rel="noopener">Prendre rendez-vous</a>';
@@ -75,8 +100,9 @@ var CONTACTS = [
     return (
       '<article class="contact-card">' +
         '<div class="contact-card__top">' + visual +
-          "<div>" +
-            '<h4 class="contact-card__name">' + escape(fullName) + "</h4>" +
+          '<div class="contact-card__identity">' +
+            '<h4 class="contact-card__name">' + escape(c.prenom) +
+              ' <span class="contact-card__lastname">' + escape(c.nom) + "</span></h4>" +
             '<p class="contact-card__role">' + escape(c.role) + "</p>" +
           "</div>" +
         "</div>" +

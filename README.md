@@ -51,7 +51,10 @@ Ouvre `stage.html` ou `alternance.html`. Chaque question est un bloc :
 
 ### Les contacts
 Tout est dans `assets/js/contacts.js` (modifié une fois, mis à jour sur les deux pages).
-Pour une photo : dépose-la dans `assets/img/equipe/` (carré, ~300 × 300 px) et indique le chemin dans `photo`.
+Pour une photo : dépose-la dans `assets/img/equipe/` (carré, 400 × 400 px) et indique le chemin dans `photo`.
+
+Le mail qui s'ouvre au clic sur une adresse est pré-rempli (nom, filière, question, démarches, documents).
+Son objet et son texte se modifient dans `MAIL_OBJET` et `MAIL_TEXTE`, dans ce même fichier.
 
 ### Les couleurs et polices
 Tout est dans `assets/css/variables.css`.
