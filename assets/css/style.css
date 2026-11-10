@@ -1,0 +1,596 @@
+/* ==========================================================================
+   STYLE — FAQ Relations Entreprises Ynov Montpellier
+   --------------------------------------------------------------------------
+   Mobile first : les styles de base sont pensés pour le téléphone,
+   les @media (min-width: …) en bas du fichier adaptent tablette et desktop.
+
+   Sommaire
+   1. Base
+   2. Header
+   3. Hero (haut de page)
+   4. Menu des catégories + recherche
+   5. Groupes de questions
+   6. Accordéons
+   7. Contenu des réponses (listes, encadrés, étapes, tableau…)
+   8. Besoin d'aide + contacts
+   9. Footer
+   10. Page d'accueil (index.html)
+   11. Responsive (tablette / desktop)
+   ========================================================================== */
+
+/* ---------- 1. Base ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink-soft);
+  font-family: var(--font-text);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--color-ink); text-underline-offset: 3px; }
+
+h1, h2, h3 {
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--font-title);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 3px; }
+
+/* Bouton générique */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid var(--color-ink);
+  border-radius: var(--radius-pill);
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background var(--duration) var(--ease), color var(--duration) var(--ease);
+}
+.btn:hover { background: transparent; color: var(--color-ink); }
+
+.btn--outline { background: transparent; color: var(--color-ink); }
+.btn--outline:hover { background: var(--color-ink); color: var(--color-on-dark); }
+
+.btn--light { border-color: var(--color-on-dark); background: transparent; color: var(--color-on-dark); }
+.btn--light:hover { background: var(--color-on-dark); color: var(--color-ink); }
+
+/* ---------- 2. Header ---------- */
+.site-header {
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+  position: relative;
+}
+/* Filet arc-en-ciel sous le header */
+.site-header::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 3px;
+  background: var(--gradient-ynov);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-s);
+  min-height: 64px;
+}
+
+/* Logo texte — remplaçable par le logo officiel (voir README) */
+.logo {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--color-on-dark);
+  text-decoration: none;
+}
+.logo__word {
+  font-family: var(--font-text);
+  font-weight: 800;
+  font-size: 1.6rem;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+.logo__bar { width: 100%; height: 3px; border-radius: 2px; background: var(--gradient-ynov); }
+.logo img { height: 34px; width: auto; }
+@media (min-width: 1024px) { .logo img { height: 40px; } }
+
+/* ---------- 3. Hero ---------- */
+.hero { padding-block: var(--space-l) var(--space-m); }
+
+.breadcrumb {
+  margin: 0 0 var(--space-m);
+  font-size: var(--fs-small);
+  color: var(--color-muted);
+}
+
+.hero__kicker {
+  display: inline-block;
+  margin: 0 0 var(--space-s);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-ink);
+  position: relative;
+}
+/* petit soulignement arc-en-ciel, comme les pastilles du site Ynov */
+.hero__kicker::after {
+  content: "";
+  position: absolute;
+  left: 12px; right: 12px; bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--gradient-ynov);
+}
+
+.hero__title { font-size: var(--fs-hero); margin-bottom: var(--space-s); }
+
+.hero__lead {
+  max-width: 38rem;
+  margin: 0 0 var(--space-m);
+  font-size: 1.0625rem;
+}
+
+.hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+
+/* ---------- 4. Menu des catégories + recherche ---------- */
+.faq-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding-block: var(--space-s);
+  background: color-mix(in srgb, var(--color-bg) 92%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Les pastilles défilent horizontalement sur mobile */
+.chips {
+  display: flex;
+  gap: var(--space-xs);
+  margin: 0;
+  padding: 2px 0 6px;
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.chips::-webkit-scrollbar { display: none; }
+
+.chip {
+  flex: none;
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background var(--duration) var(--ease), color var(--duration) var(--ease), border-color var(--duration) var(--ease);
+}
+.chip:hover,
+.chip.is-active { background: var(--color-ink); border-color: var(--color-ink); color: var(--color-on-dark); }
+
+.search { position: relative; margin-top: var(--space-xs); }
+.search__input {
+  width: 100%;
+  padding: 12px 16px 12px 44px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font: inherit;
+  font-size: 16px; /* 16px évite le zoom automatique sur iPhone */
+}
+.search__input:focus { outline: none; border-color: var(--color-ink); }
+.search__icon {
+  position: absolute;
+  left: 16px; top: 50%;
+  width: 18px; height: 18px;
+  transform: translateY(-50%);
+  color: var(--color-muted);
+  pointer-events: none;
+}
+
+/* ---------- 5. Groupes de questions ---------- */
+.faq-section { padding-block: var(--space-m) var(--space-xl); }
+
+.faq-section__title { font-size: var(--fs-h2); margin-bottom: var(--space-l); }
+
+.faq-group { scroll-margin-top: calc(var(--sticky-offset) + 56px); }
+.faq-group + .faq-group { margin-top: var(--space-xl); }
+
+.faq-group__header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-s);
+  margin-bottom: var(--space-m);
+  padding-bottom: var(--space-s);
+  border-bottom: 1px solid var(--color-line);
+}
+.faq-group__number {
+  font-family: var(--font-title);
+  font-size: var(--fs-h3);
+  color: var(--color-muted);
+}
+.faq-group__title { font-size: var(--fs-h3); }
+.faq-group__subtitle { margin: 2px 0 0; font-size: var(--fs-small); color: var(--color-muted); }
+
+.faq-list { display: grid; gap: 10px; }
+
+/* Message quand la recherche ne trouve rien */
+.faq-empty {
+  padding: var(--space-l) var(--space-m);
+  border-radius: var(--radius-m);
+  background: var(--color-surface);
+  text-align: center;
+}
+.faq-empty p { margin: 0 0 var(--space-s); }
+
+/* ---------- 6. Accordéons ---------- */
+.faq-item {
+  scroll-margin-top: calc(var(--sticky-offset) + 56px);
+  border: 1px solid transparent;
+  border-radius: var(--radius-m);
+  background: var(--color-surface);
+  overflow: hidden;
+  transition: border-color var(--duration) var(--ease), box-shadow var(--duration) var(--ease);
+}
+.faq-item[open] { border-color: var(--color-ink); box-shadow: 0 6px 24px rgb(0 0 0 / 0.06); }
+
+.faq-item__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-s);
+  padding: 18px 18px 18px 20px;
+  cursor: pointer;
+  list-style: none;              /* retire le triangle par défaut */
+  color: var(--color-ink);
+  font-weight: 600;
+  line-height: 1.4;
+  -webkit-tap-highlight-color: transparent;
+}
+.faq-item__question::-webkit-details-marker { display: none; }
+
+/* Icône + qui devient − */
+.faq-item__icon {
+  flex: none;
+  position: relative;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  transition: background var(--duration) var(--ease), color var(--duration) var(--ease);
+}
+.faq-item__icon::before,
+.faq-item__icon::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 12px; height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+  transition: transform var(--duration) var(--ease);
+}
+.faq-item__icon::after { transform: translate(-50%, -50%) rotate(90deg); }
+
+.faq-item[open] .faq-item__icon { background: var(--color-ink); color: var(--color-on-dark); }
+.faq-item[open] .faq-item__icon::after { transform: translate(-50%, -50%) rotate(0deg); }
+
+.faq-item__answer { padding: 0 20px 22px; }
+
+/* ---------- 7. Contenu des réponses ---------- */
+.faq-item__answer > :first-child { margin-top: 0; }
+.faq-item__answer > :last-child { margin-bottom: 0; }
+.faq-item__answer p { margin: 0 0 var(--space-s); }
+.faq-item__answer strong { color: var(--color-ink); }
+
+.faq-item__answer ul,
+.faq-item__answer ol { margin: 0 0 var(--space-s); padding-left: 1.25rem; }
+.faq-item__answer li + li { margin-top: 4px; }
+
+.faq-item__answer h3 {
+  margin: var(--space-m) 0 var(--space-xs);
+  font-family: var(--font-text);
+  font-size: var(--fs-body);
+  font-weight: 700;
+}
+
+/* Encadrés : conseil / important / attention */
+.note {
+  margin: var(--space-s) 0;
+  padding: var(--space-s) var(--space-m);
+  border-radius: var(--radius-s);
+  background: var(--color-tint);
+  position: relative;
+  overflow: hidden;
+}
+.note::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: var(--gradient-ynov);
+}
+.note__label {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+}
+.note--alert { background: var(--color-ink); color: var(--color-on-dark); }
+.note--alert .note__label,
+.note--alert strong { color: var(--color-on-dark); }
+
+/* Étapes numérotées */
+.steps { counter-reset: step; list-style: none; padding-left: 0 !important; }
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 44px;
+  min-height: 30px;
+}
+.steps li + li { margin-top: var(--space-s) !important; }
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0; top: -1px;
+  display: grid;
+  place-items: center;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+  font-size: var(--fs-small);
+  font-weight: 700;
+}
+
+/* Grille des durées de stage (B1, B2…) */
+.duration-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin: var(--space-s) 0;
+  padding: 0;
+  list-style: none;
+}
+.duration-grid li { margin: 0 !important; }
+.duration-card {
+  height: 100%;
+  padding: 14px;
+  border-radius: var(--radius-s);
+  background: var(--color-bg);
+}
+.duration-card--dark { background: var(--color-ink); color: var(--color-on-dark); }
+.duration-card__level {
+  display: block;
+  font-family: var(--font-title);
+  font-size: 1.75rem;
+  line-height: 1;
+  color: inherit;
+}
+.duration-card--dark .duration-card__level { color: var(--color-on-dark); }
+.duration-card__value { display: block; margin-top: 6px; font-weight: 600; font-size: var(--fs-small); }
+.duration-card__detail { display: block; font-size: 0.8125rem; opacity: 0.75; }
+
+/* Tableau (grille de rémunération) */
+.table-wrap {
+  margin: var(--space-s) 0;
+  overflow-x: auto;
+  border-radius: var(--radius-s);
+  border: 1px solid var(--color-line);
+}
+.data-table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: var(--fs-small); }
+.data-table th,
+.data-table td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--color-line); }
+.data-table thead th { background: var(--color-ink); color: var(--color-on-dark); font-weight: 600; }
+.data-table tbody th { background: var(--color-tint); color: var(--color-ink); white-space: nowrap; }
+.data-table tbody tr:last-child > * { border-bottom: 0; }
+.data-table small { display: block; color: var(--color-muted); }
+.table-caption { font-size: 0.8125rem; color: var(--color-muted); }
+
+/* ---------- 8. Besoin d'aide + contacts ---------- */
+.help {
+  padding-block: var(--space-xl);
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+}
+.help h2 { color: var(--color-on-dark); font-size: var(--fs-h2); margin-bottom: var(--space-s); }
+.help__lead { margin: 0 0 var(--space-m); max-width: 40rem; opacity: 0.85; }
+
+.help__checklist {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 var(--space-xl);
+  padding: 0;
+  list-style: none;
+  counter-reset: info;
+}
+.help__checklist li {
+  counter-increment: info;
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+  padding: 12px 16px;
+  border: 1px solid rgb(255 255 255 / 0.15);
+  border-radius: var(--radius-s);
+}
+.help__checklist li::before {
+  content: counter(info, decimal-leading-zero);
+  font-family: var(--font-title);
+  opacity: 0.6;
+}
+
+.contacts__title { color: var(--color-on-dark); font-size: var(--fs-h3); margin-bottom: var(--space-m); }
+
+.contacts { display: grid; gap: var(--space-s); }
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  padding: var(--space-m);
+  border-radius: var(--radius-m);
+  background: var(--color-surface);
+  color: var(--color-ink-soft);
+}
+.contact-card__top { display: flex; align-items: center; gap: var(--space-s); }
+
+.contact-card__photo,
+.contact-card__initials {
+  flex: none;
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+/* Photo avec anneau arc-en-ciel Ynov */
+.contact-card__photo { padding: 3px; background: var(--gradient-ynov); }
+
+/* Initiales affichées tant qu'il n'y a pas de photo */
+.contact-card__initials {
+  display: grid;
+  place-items: center;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-title);
+  font-size: 1.375rem;
+  position: relative;
+}
+.contact-card__initials::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  padding: 3px;
+  background: var(--gradient-ynov);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.contact-card__name { margin: 0; color: var(--color-ink); font-family: var(--font-title); font-size: 1.25rem; line-height: 1.2; }
+.contact-card__role { margin: 2px 0 0; font-size: var(--fs-small); color: var(--color-muted); }
+.contact-card__note { margin: 0; font-size: var(--fs-small); }
+.contact-card__actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+.contact-card__actions .btn { word-break: break-all; }
+
+/* ---------- 9. Footer ---------- */
+.site-footer {
+  padding-block: var(--space-l);
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+  border-top: 1px solid rgb(255 255 255 / 0.12);
+  font-size: var(--fs-small);
+}
+.site-footer__inner { display: flex; flex-direction: column; gap: var(--space-s); }
+.site-footer__promise { margin: 0; font-family: var(--font-title); font-size: 1.5rem; line-height: 1.1; }
+.site-footer a { color: var(--color-on-dark); }
+.site-footer__links { display: flex; flex-wrap: wrap; gap: var(--space-m); margin: 0; padding: 0; list-style: none; }
+.site-footer__copy { margin: 0; opacity: 0.6; }
+
+/* ---------- 10. Page d'accueil (index.html) ---------- */
+.choice-grid { display: grid; gap: var(--space-s); padding-bottom: var(--space-xl); }
+.choice-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  min-height: 200px;
+  padding: var(--space-l) var(--space-m);
+  border-radius: var(--radius-l);
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+.choice-card::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 4px;
+  background: var(--gradient-ynov);
+}
+.choice-card__title { color: var(--color-on-dark); font-size: var(--fs-h2); }
+.choice-card__text { margin: 0; opacity: 0.8; }
+.choice-card__cta { margin-top: auto; font-weight: 600; }
+
+/* ---------- 11. Responsive ---------- */
+
+/* Tablette */
+@media (min-width: 640px) {
+  :root {
+    --gutter: 24px;
+    --fs-hero: 3.25rem;
+    --fs-h2: 2.25rem;
+  }
+  .duration-grid { grid-template-columns: repeat(3, 1fr); }
+  .contacts { grid-template-columns: repeat(2, 1fr); }
+  .choice-grid { grid-template-columns: repeat(2, 1fr); }
+  .help__checklist { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  :root {
+    --fs-hero: 4rem;
+    --fs-h2: 2.75rem;
+    --fs-h3: 1.5rem;
+  }
+  .hero { padding-block: var(--space-xl) var(--space-l); }
+  .faq-toolbar__inner { display: flex; align-items: center; gap: var(--space-m); }
+  .chips { flex: 1; flex-wrap: wrap; }
+  .search { flex: 0 0 280px; margin-top: 0; }
+  .faq-item__question { padding: 22px 24px 22px 28px; font-size: 1.0625rem; }
+  .faq-item__answer { padding: 0 28px 26px; }
+  .contacts { grid-template-columns: repeat(3, 1fr); }
+  .site-footer__inner { flex-direction: row; align-items: center; justify-content: space-between; }
+}
+
+/* Respect des préférences d'accessibilité : pas d'animation */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}

@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FAQ Stage — Relations Entreprises | Ynov Montpellier</title>
+  <meta name="description" content="Tout savoir sur tes recherches et tes démarches de stage à Ynov Montpellier : durées, convention, gratification, contacts.">
+  <meta name="theme-color" content="#0b0b0b">
+
+  <!-- Polices (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
+
+  <!-- Styles : variables (couleurs, polices…) puis mise en page -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ====================================================================
+       HEADER
+       ==================================================================== -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="index.html" aria-label="Ynov — retour à l'accueil de la FAQ">
+        <!-- Logo officiel : pour le changer, remplace le fichier assets/img/logo-ynov.png -->
+        <img src="assets/img/logo-ynov.png" alt="Ynov" width="395" height="149">
+      </a>
+      <a class="btn btn--light" href="alternance.html">FAQ Alternance →</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==================================================================
+         HERO
+         ================================================================== -->
+    <section class="hero">
+      <div class="container">
+        <p class="breadcrumb">Ynov Montpellier › Relations Entreprises › Stage</p>
+        <p class="hero__kicker">Relations Entreprises</p>
+        <h1 class="hero__title">FAQ Stage</h1>
+        <p class="hero__lead">
+          Chercher, signer, démarrer. Toutes les réponses pour préparer ton stage,
+          de la recherche d'entreprise jusqu'au dernier jour.
+        </p>
+        <div class="hero__actions">
+          <a class="btn" href="#convention">Ma convention de stage</a>
+          <a class="btn btn--outline" href="#aide">Contacter le service</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         MENU DES CATÉGORIES + RECHERCHE
+         Chaque pastille pointe vers l'id d'un groupe plus bas (#avant, #trouve…)
+         ================================================================== -->
+    <nav class="faq-toolbar" aria-label="Catégories de la FAQ">
+      <div class="container faq-toolbar__inner">
+        <ul class="chips">
+          <li><a class="chip" href="#avant">Avant de chercher</a></li>
+          <li><a class="chip" href="#trouve">J'ai trouvé mon stage</a></li>
+          <li><a class="chip" href="#convention">Ma convention</a></li>
+          <li><a class="chip" href="#pendant">Pendant mon stage</a></li>
+          <li><a class="chip" href="#apres">Après mon stage</a></li>
+          <li><a class="chip" href="#difficulte">Une difficulté ?</a></li>
+        </ul>
+        <div class="search">
+          <label class="visually-hidden" for="faq-search">Rechercher une question</label>
+          <svg class="search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input class="search__input" id="faq-search" type="search" placeholder="Rechercher : convention, durée…" data-faq-search>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ==================================================================
+         QUESTIONS
+         --------------------------------------------------------------------
+         Pour AJOUTER une question : copie un bloc <details>…</details>
+         complet, colle-le dans le bon groupe et change :
+           - l'id (unique, sans espace ni accent)  → sert pour les liens directs
+           - le texte de la question dans <span class="faq-item__title">
+           - la réponse dans <div class="faq-item__answer">
+         ================================================================== -->
+    <section class="faq-section">
+      <div class="container">
+        <h2 class="faq-section__title">Ton stage en détails</h2>
+
+        <!-- ============ 01. AVANT DE CHERCHER ============ -->
+        <section class="faq-group" id="avant">
+          <header class="faq-group__header">
+            <span class="faq-group__number">01.</span>
+            <div>
+              <h3 class="faq-group__title">Avant de chercher mon stage</h3>
+              <p class="faq-group__subtitle">Conditions, durée, où chercher</p>
+            </div>
+          </header>
+
+          <div class="faq-list">
+
+            <details class="faq-item" id="conditions">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Quelles sont les conditions pour effectuer un stage ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>Ton stage doit être réalisé <strong>dans le cadre de ta formation</strong> et faire l'objet d'une <strong>convention de stage signée avant le premier jour</strong>.</p>
+                <p>La durée, les dates et les conditions du stage doivent respecter les règles de ta formation et de l'école.</p>
+              </div>
+            </details>
+
+            <details class="faq-item" id="duree">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Combien de temps doit durer mon stage ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>La durée dépend de ta formation et de ton année d'études.</p>
+
+                <ul class="duration-grid">
+                  <li><div class="duration-card">
+                    <span class="duration-card__level">B1</span>
+                    <span class="duration-card__value">Non obligatoire</span>
+                    <span class="duration-card__detail">mais fortement conseillé</span>
+                  </div></li>
+                  <li><div class="duration-card duration-card--dark">
+                    <span class="duration-card__level">B2</span>
+                    <span class="duration-card__value">25 jours obligatoires</span>
+                    <span class="duration-card__detail">5 semaines · 175 h</span>
+                  </div></li>
+                  <li><div class="duration-card">
+                    <span class="duration-card__level">B3</span>
+                    <span class="duration-card__value">50 jours obligatoires*</span>
+                    <span class="duration-card__detail">10 semaines · 350 h</span>
+                  </div></li>
+                  <li><div class="duration-card duration-card--dark">
+                    <span class="duration-card__level">M1</span>
+                    <span class="duration-card__value">80 jours obligatoires</span>
+                    <span class="duration-card__detail">16 semaines · 560 h</span>
+                  </div></li>
+                  <li><div class="duration-card">
+                    <span class="duration-card__level">M2</span>
+                    <span class="duration-card__value">80 jours obligatoires**</span>
+                    <span class="duration-card__detail">16 semaines · 560 h</span>
+                  </div></li>
+                  <li><div class="duration-card duration-card--dark">
+                    <span class="duration-card__level">BTS</span>
+                    <span class="duration-card__value">CIEL 1 &amp; 2 : 20 jours</span>
+                    <span class="duration-card__detail">SIO SISR 1 &amp; 2 : 25 jours</span>
+                  </div></li>
+                </ul>
+
+                <div class="note">
+                  <span class="note__label">Exceptions</span>
+                  <p>* <strong>B3 Chef de projet design interactif</strong> et <strong>B3 Chef de projet marketing digital</strong> : 90 jours obligatoires (diplôme IMPARARE).</p>
+                  <p>** <strong>M2 Marketing &amp; communication</strong>, toutes spécialités (titre Manager de la communication et du marketing digital) : 132 jours obligatoires (diplôme INSEEC).</p>
+                </div>
+
+                <h3>Bon à savoir</h3>
+                <ul>
+                  <li>Ton stage se déroule <strong>en dehors de tes jours de cours</strong>.</li>
+                  <li>Les heures comptent sur l'année de formation dès la rentrée et se cumulent sur l'année en cours.</li>
+                  <li>Le volume total doit être validé avant la fin de ton cycle de formation. S'il manque des heures sur l'année, tu devras les rattraper.</li>
+                  <li>En France, un stage dans une même structure ne peut pas dépasser <strong>6 mois effectifs, soit 924 h</strong>, sur une même année d'enseignement.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="faq-item" id="trouver">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Comment trouver un stage ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>Multiplie les canaux :</p>
+                <ul>
+                  <li>les offres transmises par Ynov sur <a href="https://ymatch.ynov.com" target="_blank" rel="noopener">Ymatch</a> ;</li>
+                  <li>LinkedIn ;</li>
+                  <li>les sites spécialisés dans l'emploi et les stages ;</li>
+                  <li>les candidatures spontanées ;</li>
+                  <li>ton réseau personnel et professionnel ;</li>
+                  <li>les forums, salons et événements entreprises.</li>
+                </ul>
+                <div class="note">
+                  <span class="note__label">Conseil</span>
+                  <p>Ne te limite pas aux offres publiées : les candidatures spontanées fonctionnent souvent très bien.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="faq-item" id="etranger">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Puis-je faire mon stage à l'étranger ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p><strong>Oui</strong>, sous certaines conditions.</p>
+                <p>Les démarches administratives varient selon le pays d'accueil, et la convention se fait <strong>en dehors de Ymatch</strong>. Rapproche-toi du service Relations Entreprises <strong>avant de t'engager</strong> auprès de l'entreprise.</p>
+              </div>
+            </details>
+
+            <details class="faq-item" id="entreprise-proche">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Puis-je faire un stage dans ma propre entreprise ou celle d'un proche ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>C'est possible, sous certaines conditions :</p>
+                <ul>
+                  <li>tu ne dois <strong>pas figurer dans les statuts</strong> de l'entreprise ;</li>
+                  <li>tu dois être <strong>accompagné(e) par un tuteur</strong>.</li>
+                </ul>
+                <p>Le stage répond aux mêmes exigences qu'un stage classique et doit te permettre de développer des compétences liées à ta formation.</p>
+              </div>
+            </details>
+
+          </div>
+        </section>
+
+        <!-- ============ 02. J'AI TROUVÉ MON STAGE ============ -->
+        <section class="faq-group" id="trouve">
+          <header class="faq-group__header">
+            <span class="faq-group__number">02.</span>
+            <div>
+              <h3 class="faq-group__title">J'ai trouvé mon stage</h3>
+              <p class="faq-group__subtitle">Démarrage, télétravail, gratification</p>
+            </div>
+          </header>
+
+          <div class="faq-list">
+
+            <details class="faq-item" id="commencer-vite">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">L'entreprise me demande de commencer rapidement, que faire ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <div class="note note--alert">
+                  <span class="note__label">Important</span>
+                  <p>Ne commence pas sans convention signée.</p>
+                </div>
+                <p>Même si l'entreprise est pressée, contacte le service Relations Entreprises pour vérifier que toutes les démarches administratives sont finalisées.</p>
+              </div>
+            </details>
+
+            <details class="faq-item" id="teletravail">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Puis-je faire du télétravail pendant mon stage ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p><strong>Oui</strong>, si l'entreprise d'accueil l'autorise et si c'est prévu dans le cadre du stage.</p>
+                <p>Les conditions de télétravail se définissent avec l'entreprise et doivent apparaître dans les documents du stage, notamment <strong>sur la convention</strong>.</p>
+              </div>
+            </details>
+
+            <details class="faq-item" id="gratification">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Suis-je rémunéré(e) pendant mon stage ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>Au-delà de <strong>308 h de stage dans la même entreprise</strong>, la gratification est obligatoire. Concrètement : dès que ta convention prévoit 309 h ou plus (soit 2 mois et 1 jour), tu es payé(e).</p>
+                <ul>
+                  <li>Montant minimum légal en 2026 : <strong>4,50 € brut par heure</strong>, soit 15 % du plafond horaire de la Sécurité sociale.</li>
+                  <li>La gratification est <strong>rétroactive</strong> : elle compte dès la première heure de stage.</li>
+                  <li>Le versement et le montant doivent figurer dans ta convention de stage.</li>
+                </ul>
+                <div class="note">
+                  <span class="note__label">À noter</span>
+                  <p>Ce montant peut évoluer en cours d'année scolaire.</p>
+                </div>
+              </div>
+            </details>
+
+          </div>
+        </section>
+
+        <!-- ============ 03. MA CONVENTION ============ -->
+        <section class="faq-group" id="convention">
+          <header class="faq-group__header">
+            <span class="faq-group__number">03.</span>
+            <div>
+              <h3 class="faq-group__title">Ma convention de stage</h3>
+              <p class="faq-group__subtitle">Générer, vérifier, signer</p>
+            </div>
+          </header>
+
+          <div class="faq-list">
+
+            <details class="faq-item" id="avant-convention">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Puis-je commencer mon stage avant d'avoir signé ma convention ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p><strong>Non.</strong> La convention doit être validée et signée par toutes les parties <strong>avant le premier jour de stage</strong>.</p>
+                <div class="note note--alert">
+                  <span class="note__label">Important</span>
+                  <p>Ne commence jamais ton stage sans convention signée.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="faq-item" id="generer-convention">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Comment générer ma convention de stage ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>Une fois ton stage trouvé, tout se passe sur <a href="https://ymatch.ynov.com" target="_blank" rel="noopener">Ymatch</a> :</p>
+                <ol class="steps">
+                  <li>Sur la page d'accueil de Ymatch, descends et clique sur <strong>« Ajouter un stage »</strong>.</li>
+                  <li>En haut à gauche, renseigne le <strong>nom de l'entreprise</strong> et l'<strong>adresse mail du contact entreprise</strong>, puis clique sur « Valider » en bas à droite.</li>
+                  <li>L'entreprise reçoit la fiche de renseignements par mail. Vérifie avec elle qu'elle l'a bien reçue : le mail peut arriver dans les spams.</li>
+                  <li>L'entreprise remplit la fiche de renseignements.</li>
+                  <li>Vérifie la <strong>date de début</strong>, le <strong>volume horaire</strong> et la <strong>date de fin</strong>. Tu peux les confirmer en amont avec le service Relations Entreprises (voir ton calendrier de formation).</li>
+                  <li>Le service Relations Entreprises contrôle les modalités, puis envoie la convention pour signature à l'entreprise et à toi.</li>
+                  <li>Toutes les signatures sont là : <strong>tu peux démarrer ton stage</strong>.</li>
+                </ol>
+                <div class="note">
+                  <span class="note__label">Stage à l'étranger</span>
+                  <p>La convention se fait hors Ymatch : contacte directement le service Relations Entreprises.</p>
+                </div>
+                <div class="note">
+                  <span class="note__label">Conseil</span>
+                  <p>Prévois suffisamment de temps entre la demande et le début du stage : la génération et la signature prennent quelques jours.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="faq-item" id="infos-entreprise">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Quelles informations récupérer auprès de l'entreprise ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>Avant de lancer ta demande sur Ymatch, récupère :</p>
+                <ul>
+                  <li>les coordonnées de l'entreprise et de ton contact ;</li>
+                  <li>le nom de ton tuteur ;</li>
+                  <li>les dates de début et de fin ;</li>
+                  <li>tes missions et tes horaires ;</li>
+                  <li>la gratification, si elle s'applique.</li>
+                </ul>
+              </div>
+            </details>
+
+          </div>
+        </section>
+
+        <!-- ============ 04. PENDANT MON STAGE ============ -->
+        <section class="faq-group" id="pendant">
+          <header class="faq-group__header">
+            <span class="faq-group__number">04.</span>
+            <div>
+              <h3 class="faq-group__title">Pendant mon stage</h3>
+              <p class="faq-group__subtitle">Modifier, prolonger</p>
+            </div>
+          </header>
+
+          <div class="faq-list">
+
+            <details class="faq-item" id="modification">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Mon stage est annulé ou l'entreprise veut modifier les conditions, que faire ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>Contacte rapidement le service Relations Entreprises.</p>
+                <p>Ne modifie pas toi-même les informations de la convention sans validation préalable.</p>
+              </div>
+            </details>
+
+            <details class="faq-item" id="prolonger">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Mon entreprise souhaite prolonger mon stage, est-ce possible ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>C'est possible, dans la limite de la durée maximale autorisée (6 mois, soit 924 h, dans une même structure sur une même année).</p>
+                <p>La prolongation doit être <strong>validée et formalisée avant la date de fin prévue</strong>.</p>
+              </div>
+            </details>
+
+          </div>
+        </section>
+
+        <!-- ============ 05. APRÈS MON STAGE ============ -->
+        <section class="faq-group" id="apres">
+          <header class="faq-group__header">
+            <span class="faq-group__number">05.</span>
+            <div>
+              <h3 class="faq-group__title">Après mon stage</h3>
+              <p class="faq-group__subtitle">Et si l'aventure continue ?</p>
+            </div>
+          </header>
+
+          <div class="faq-list">
+
+            <details class="faq-item" id="recrutement">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Mon entreprise souhaite me recruter après mon stage, que dois-je faire ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>Si l'entreprise te propose une alternance, contacte le service Relations Entreprises : on t'accompagne dans la suite des démarches.</p>
+                <p><a href="alternance.html">Consulter la FAQ Alternance →</a></p>
+              </div>
+            </details>
+
+          </div>
+        </section>
+
+        <!-- ============ 06. DIFFICULTÉ ============ -->
+        <section class="faq-group" id="difficulte">
+          <header class="faq-group__header">
+            <span class="faq-group__number">06.</span>
+            <div>
+              <h3 class="faq-group__title">Je rencontre une difficulté</h3>
+              <p class="faq-group__subtitle">Ne reste pas seul(e)</p>
+            </div>
+          </header>
+
+          <div class="faq-list">
+
+            <details class="faq-item" id="probleme">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Mon stage se passe mal, que faire ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>En cas de difficulté avec ton entreprise d'accueil, ne reste pas seul(e).</p>
+                <p>Contacte le service Relations Entreprises : on fait le point ensemble sur la situation et on cherche les solutions possibles.</p>
+              </div>
+            </details>
+
+            <details class="faq-item" id="rupture">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Puis-je rompre mon stage ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>Une interruption ou une rupture de stage doit être encadrée. Elle ne se décide pas sans en informer l'école et l'entreprise.</p>
+                <p>Contacte le service Relations Entreprises dès que possible.</p>
+              </div>
+            </details>
+
+          </div>
+        </section>
+
+        <!-- Affiché uniquement si la recherche ne trouve rien -->
+        <div class="faq-empty" data-faq-empty hidden>
+          <p><strong>Aucune question ne correspond à ta recherche.</strong></p>
+          <p>Essaie un autre mot, ou écris-nous directement.</p>
+          <a class="btn" href="#aide">Contacter le service</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         BESOIN D'AIDE + CONTACTS
+         Les cartes contacts sont générées par assets/js/contacts.js
+         ================================================================== -->
+    <section class="help" id="aide">
+      <div class="container">
+        <h2>Besoin d'aide ?</h2>
+        <p class="help__lead">
+          Tu n'as pas trouvé ta réponse ? Écris-nous en précisant ces informations :
+          on pourra t'aider plus vite.
+        </p>
+        <ol class="help__checklist">
+          <li>Ton nom et prénom</li>
+          <li>Ta filière</li>
+          <li>Ta question ou ton problème</li>
+          <li>Les démarches déjà effectuées</li>
+          <li>Les éventuels documents concernés</li>
+        </ol>
+
+        <h3 class="contacts__title">Le service Relations Entreprises</h3>
+        <div class="contacts" data-contacts></div>
+        <noscript>
+          <p>Contact : mathieu.faivret@ynov.com</p>
+        </noscript>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       FOOTER
+       ==================================================================== -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p class="site-footer__promise">Savoir Faire Évoluer</p>
+      <ul class="site-footer__links">
+        <li><a href="alternance.html">FAQ Alternance</a></li>
+        <li><a href="https://ymatch.ynov.com" target="_blank" rel="noopener">Ymatch</a></li>
+        <li><a href="https://www.ynov.com/campus/montpellier" target="_blank" rel="noopener">Ynov Montpellier</a></li>
+      </ul>
+      <p class="site-footer__copy">© Ynov Montpellier — Service Relations Entreprises</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/contacts.js"></script>
+  <script src="assets/js/faq.js"></script>
+</body>
+</html>

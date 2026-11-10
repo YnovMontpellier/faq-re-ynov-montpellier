@@ -1,0 +1,64 @@
+/* ==========================================================================
+   VARIABLES — DA Ynov
+   --------------------------------------------------------------------------
+   👉 C'est ICI que tu changes les couleurs, les polices, les arrondis
+      et les espacements. Tout le reste du site se met à jour tout seul.
+   ========================================================================== */
+
+:root {
+  /* ---------- Couleurs ---------- */
+  --color-bg: #e7eee9;          /* vert d'eau Ynov (fond de page)          */
+  --color-surface: #ffffff;     /* cartes / accordéons                     */
+  --color-ink: #0b0b0b;         /* noir Ynov (titres, header, boutons)     */
+  --color-ink-soft: #2e3330;    /* texte courant                           */
+  --color-muted: #66706a;       /* textes secondaires                      */
+  --color-line: #d2ddd6;        /* séparateurs, bordures                   */
+  --color-on-dark: #ffffff;     /* texte sur fond noir                     */
+  --color-tint: #f3f7f4;        /* fond léger des encadrés                 */
+
+  /* Dégradé arc-en-ciel Ynov (soulignements, filets) */
+  --gradient-ynov: linear-gradient(
+    90deg,
+    #f2283a 0%,
+    #ff8a1f 18%,
+    #ffd21f 34%,
+    #3fd46b 52%,
+    #1fc8e0 68%,
+    #2f6bff 84%,
+    #1e8b4f 100%
+  );
+
+  /* ---------- Polices ---------- */
+  /* Titres : serif élégant (comme le site Ynov) / Texte : sans-serif lisible */
+  --font-title: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-text: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Tailles (mobile d'abord, agrandies dans style.css pour desktop) */
+  --fs-hero: 2.5rem;
+  --fs-h2: 1.75rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+
+  /* ---------- Arrondis ---------- */
+  --radius-s: 12px;
+  --radius-m: 20px;
+  --radius-l: 32px;
+  --radius-pill: 999px;
+
+  /* ---------- Espacements ---------- */
+  --gutter: 16px;               /* marge latérale sur mobile               */
+  --space-xs: 8px;
+  --space-s: 12px;
+  --space-m: 20px;
+  --space-l: 32px;
+  --space-xl: 56px;
+
+  /* ---------- Mise en page ---------- */
+  --container: 960px;           /* largeur max du contenu                  */
+  --sticky-offset: 72px;        /* hauteur du menu de catégories collant   */
+
+  /* ---------- Animations ---------- */
+  --duration: 280ms;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}

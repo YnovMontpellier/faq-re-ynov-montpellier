@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FAQ Alternance — Relations Entreprises | Ynov Montpellier</title>
+  <meta name="description" content="Tout savoir sur tes recherches et tes démarches d'alternance à Ynov Montpellier : contrat, rémunération, aides entreprises, contacts.">
+  <meta name="theme-color" content="#0b0b0b">
+
+  <!-- Polices (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
+
+  <!-- Styles : variables (couleurs, polices…) puis mise en page -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ====================================================================
+       HEADER
+       ==================================================================== -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="index.html" aria-label="Ynov — retour à l'accueil de la FAQ">
+        <!-- Logo officiel : pour le changer, remplace le fichier assets/img/logo-ynov.png -->
+        <img src="assets/img/logo-ynov.png" alt="Ynov" width="395" height="149">
+      </a>
+      <a class="btn btn--light" href="stage.html">FAQ Stage →</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==================================================================
+         HERO
+         ================================================================== -->
+    <section class="hero">
+      <div class="container">
+        <p class="breadcrumb">Ynov Montpellier › Relations Entreprises › Alternance</p>
+        <p class="hero__kicker">Relations Entreprises</p>
+        <h1 class="hero__title">FAQ Alternance</h1>
+        <p class="hero__lead">
+          Chercher, convaincre, signer. Toutes les réponses pour construire ton alternance,
+          de la première candidature à ton contrat.
+        </p>
+        <div class="hero__actions">
+          <a class="btn" href="#trouve">J'ai trouvé mon entreprise</a>
+          <a class="btn btn--outline" href="#aide">Contacter le service</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         MENU DES CATÉGORIES + RECHERCHE
+         Chaque pastille pointe vers l'id d'un groupe plus bas (#recherche, #entretien…)
+         ================================================================== -->
+    <nav class="faq-toolbar" aria-label="Catégories de la FAQ">
+      <div class="container faq-toolbar__inner">
+        <ul class="chips">
+          <li><a class="chip" href="#recherche">Je recherche</a></li>
+          <li><a class="chip" href="#entretien">J'ai un entretien</a></li>
+          <li><a class="chip" href="#trouve">J'ai trouvé mon entreprise</a></li>
+          <li><a class="chip" href="#contrat">Mon contrat</a></li>
+          <li><a class="chip" href="#pendant">Pendant mon alternance</a></li>
+          <li><a class="chip" href="#difficulte">Une difficulté ?</a></li>
+        </ul>
+        <div class="search">
+          <label class="visually-hidden" for="faq-search">Rechercher une question</label>
+          <svg class="search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input class="search__input" id="faq-search" type="search" placeholder="Rechercher : contrat, salaire…" data-faq-search>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ==================================================================
+         QUESTIONS
+         --------------------------------------------------------------------
+         Pour AJOUTER une question : copie un bloc <details>…</details>
+         complet, colle-le dans le bon groupe et change :
+           - l'id (unique, sans espace ni accent)  → sert pour les liens directs
+           - le texte de la question dans <span class="faq-item__title">
+           - la réponse dans <div class="faq-item__answer">
+         ================================================================== -->
+    <section class="faq-section">
+      <div class="container">
+        <h2 class="faq-section__title">Ton alternance en détails</h2>
+
+        <!-- ============ 01. JE RECHERCHE ============ -->
+        <section class="faq-group" id="recherche">
+          <header class="faq-group__header">
+            <span class="faq-group__number">01.</span>
+            <div>
+              <h3 class="faq-group__title">Je recherche mon alternance</h3>
+              <p class="faq-group__subtitle">Comprendre, chercher, candidater</p>
+            </div>
+          </header>
+
+          <div class="faq-list">
+
+            <details class="faq-item" id="definition">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Qu'est-ce qu'une alternance ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>L'alternance te permet de <strong>travailler en entreprise tout en préparant un diplôme</strong> ou une qualification.</p>
+                <p>Tu es salarié(e) d'une entreprise et tu alternes entre des périodes de formation à Ynov Montpellier et des périodes en entreprise, selon un planning annuel défini.</p>
+              </div>
+            </details>
+
+            <details class="faq-item" id="types-contrats">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Quels sont les différents types de contrats en alternance ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>Il existe deux contrats principaux :</p>
+                <ul>
+                  <li>le contrat d'apprentissage ;</li>
+                  <li>le contrat de professionnalisation.</li>
+                </ul>
+                <p>Le contrat applicable dépend notamment de ton âge, de ta formation et de ta situation.</p>
+                <div class="note">
+                  <span class="note__label">À noter</span>
+                  <p>Ynov Montpellier propose <strong>uniquement le contrat d'apprentissage</strong>.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="faq-item" id="trouver">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Comment trouver une alternance ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>Multiplie les canaux de recherche :</p>
+                <ul>
+                  <li>les offres transmises par Ynov sur <a href="https://ymatch.ynov.com" target="_blank" rel="noopener">Ymatch</a> ;</li>
+                  <li>les candidatures via LinkedIn ;</li>
+                  <li>les plateformes spécialisées ;</li>
+                  <li>les sites carrières des entreprises ;</li>
+                  <li>les candidatures spontanées ;</li>
+                  <li>ton réseau personnel et professionnel ;</li>
+                  <li>les événements et job datings ;</li>
+                  <li>les contacts directs avec les recruteurs.</li>
+                </ul>
+                <p>Le service Relations Entreprises te partage régulièrement des offres et des invitations à des ateliers. Pense à y participer.</p>
+                <div class="note">
+                  <span class="note__label">Conseil</span>
+                  <p>Cherche régulièrement : plusieurs candidatures ciblées chaque semaine valent mieux qu'attendre l'offre parfaite.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="faq-item" id="nombre-candidatures">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Combien de candidatures dois-je envoyer ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>Il n'existe pas de nombre idéal.</p>
+                <p>La priorité : des candidatures <strong>ciblées et personnalisées</strong>, avec un volume suffisant pour multiplier tes opportunités.</p>
+              </div>
+            </details>
+
+            <details class="faq-item" id="sans-experience">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Puis-je trouver une alternance sans avoir d'expérience ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p><strong>Oui.</strong> L'alternance est justement faite pour développer ton expérience professionnelle.</p>
+                <p>Mets en avant :</p>
+                <ul>
+                  <li>tes projets scolaires et personnels ;</li>
+                  <li>tes compétences techniques ;</li>
+                  <li>tes expériences associatives et tes jobs étudiants ;</li>
+                  <li>tes soft skills et ta motivation.</li>
+                </ul>
+                <p>Le service Relations Entreprises est là pour t'accompagner : prends rendez-vous pour un coaching personnalisé et participe aux ateliers de recherche d'alternance.</p>
+              </div>
+            </details>
+
+            <details class="faq-item" id="pas-encore-trouve">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Je n'ai pas encore trouvé d'alternance, que dois-je faire ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>Ne reste pas seul(e) et ne mets pas tes recherches en pause. Continue à :</p>
+                <ul>
+                  <li>candidater régulièrement et relancer les recruteurs ;</li>
+                  <li>développer ton réseau et solliciter ton entourage ;</li>
+                  <li>participer aux événements entreprises ;</li>
+                  <li>adapter ton CV et ton profil LinkedIn ;</li>
+                  <li>échanger avec le service Relations Entreprises.</li>
+                </ul>
+                <p>Une recherche d'alternance se construit dans la durée : garde une dynamique régulière.</p>
+                <p><a class="btn" href="https://calendly.com/elisa-gorbatoff-ynov/ynovcampus-rendez-vous-etudiant" target="_blank" rel="noopener">Prendre rendez-vous avec Elisa</a></p>
+              </div>
+            </details>
+
+          </div>
+        </section>
+
+        <!-- ============ 02. J'AI UN ENTRETIEN ============ -->
+        <section class="faq-group" id="entretien">
+          <header class="faq-group__header">
+            <span class="faq-group__number">02.</span>
+            <div>
+              <h3 class="faq-group__title">J'ai un entretien</h3>
+              <p class="faq-group__subtitle">Répondre aux questions des entreprises</p>
+            </div>
+          </header>
+
+          <div class="faq-list">
+
+            <details class="faq-item" id="cout-aides">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">L'entreprise me pose des questions sur le coût de la formation et les aides, que répondre ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>Cela dépend de l'entreprise, de son OPCO et de ta situation. Dans un premier temps, tu peux donner ces éléments sur les <strong>aides de l'État</strong> (versées de façon fractionnée sur les mois de la première année de contrat) :</p>
+
+                <h3>Tu es en Bachelor ou en Mastère</h3>
+                <ul>
+                  <li>Entreprise de moins de 250 salariés : <strong>2 000 €</strong></li>
+                  <li>Entreprise de plus de 250 salariés : <strong>750 €</strong></li>
+                  <li>Si tu as une reconnaissance RQTH : <strong>6 000 €</strong></li>
+                </ul>
+
+                <h3>Tu es en BTS</h3>
+                <ul>
+                  <li>Entreprise de moins de 250 salariés : <strong>4 500 €</strong></li>
+                  <li>Entreprise de plus de 250 salariés : <strong>1 500 €</strong></li>
+                  <li>Si tu as une reconnaissance RQTH : <strong>6 000 €</strong></li>
+                </ul>
+
+                <p>Avec une RQTH, l'entreprise peut aussi demander un financement spécifique si tu as besoin d'aménagements particuliers.</p>
+                <p>Pour la <strong>prise en charge de la formation</strong>, transmets les coordonnées de l'entreprise à Mathieu FAIVRET : il la contactera pour lui envoyer des éléments précis.</p>
+
+                <div class="note">
+                  <span class="note__label">À noter</span>
+                  <p>Ces montants s'appliquent aux contrats signés <strong>au plus tard le 31/12/2026</strong>.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="faq-item" id="aides-recrutement">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">L'entreprise me demande si elle peut bénéficier d'aides pour mon recrutement, que répondre ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>Selon leur situation et la réglementation en vigueur, les entreprises peuvent bénéficier d'aides à l'embauche d'alternants.</p>
+                <p><a href="#cout-aides">Voir le détail des montants →</a></p>
+              </div>
+            </details>
+
+            <details class="faq-item" id="refus-alternant">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">L'entreprise peut-elle refuser ma candidature parce que je suis en alternance ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>L'entreprise choisit librement son candidat, selon ses besoins et son processus de recrutement.</p>
+                <p>Ton rôle : montrer ce que tu peux lui apporter. Tes compétences, ta motivation, tes projets, ta personnalité et ta capacité à progresser.</p>
+              </div>
+            </details>
+
+            <details class="faq-item" id="plusieurs-entreprises">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Plusieurs entreprises souhaitent me recruter, est-ce possible ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p><strong>Oui.</strong> Tant que ton contrat n'est pas signé, tu peux poursuivre ta recherche. C'est même fortement conseillé.</p>
+                <p>Dès que tu t'engages définitivement auprès d'une entreprise, préviens rapidement les autres entreprises avec lesquelles tu es en processus de recrutement. Fais les choses proprement.</p>
+              </div>
+            </details>
+
+          </div>
+        </section>
+
+        <!-- ============ 03. J'AI TROUVÉ MON ENTREPRISE ============ -->
+        <section class="faq-group" id="trouve">
+          <header class="faq-group__header">
+            <span class="faq-group__number">03.</span>
+            <div>
+              <h3 class="faq-group__title">J'ai trouvé mon entreprise</h3>
+              <p class="faq-group__subtitle">Les bons réflexes avant de démarrer</p>
+            </div>
+          </header>
+
+          <div class="faq-list">
+
+            <details class="faq-item" id="proposition">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Une entreprise m'a proposé une alternance : que dois-je faire ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>Félicitations ! Ne te contente pas de répondre « oui » à l'entreprise.</p>
+                <p>Transmets rapidement les informations au service Relations Entreprises pour lancer les démarches liées à ton contrat.</p>
+                <p><a href="#qui-contacter">Qui contacter une fois mon alternance trouvée ? →</a></p>
+              </div>
+            </details>
+
+            <details class="faq-item" id="qui-contacter">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Qui contacter une fois mon alternance trouvée ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>Dès que tu as un accord de principe ou une proposition, contacte <strong>Mathieu FAIVRET</strong> : <a href="mailto:mathieu.faivret@ynov.com">mathieu.faivret@ynov.com</a></p>
+                <p>Transmets-lui les informations dont tu disposes :</p>
+                <ol class="steps">
+                  <li>le nom de l'entreprise ;</li>
+                  <li>le nom et les coordonnées du contact RH ou du recruteur ;</li>
+                  <li>l'intitulé du poste ;</li>
+                  <li>la date de début souhaitée.</li>
+                </ol>
+                <div class="note">
+                  <span class="note__label">Conseil</span>
+                  <p>Plus tu transmets vite ces informations, plus les démarches démarrent vite.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="faq-item" id="avant-contrat">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Puis-je commencer mon alternance avant d'avoir mon contrat ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <div class="note note--alert">
+                  <span class="note__label">Important</span>
+                  <p>Ne commence pas en entreprise sans avoir vérifié que ta situation administrative et contractuelle est régularisée.</p>
+                </div>
+                <p>Mathieu FAIVRET est ton interlocuteur pour les contrats. Contacte-le pour savoir où en est la démarche avant de débuter.</p>
+              </div>
+            </details>
+
+          </div>
+        </section>
+
+        <!-- ============ 04. MON CONTRAT ============ -->
+        <section class="faq-group" id="contrat">
+          <header class="faq-group__header">
+            <span class="faq-group__number">04.</span>
+            <div>
+              <h3 class="faq-group__title">Mon contrat</h3>
+              <p class="faq-group__subtitle">Rythme et rémunération</p>
+            </div>
+          </header>
+
+          <div class="faq-list">
+
+            <details class="faq-item" id="rythme">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Qui choisit le rythme d'alternance ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>Le rythme est défini <strong>en fonction de ta formation</strong>.</p>
+                <p>Vérifie le rythme prévu avant de t'engager auprès d'une entreprise : demande ton planning au service Relations Entreprises.</p>
+              </div>
+            </details>
+
+            <details class="faq-item" id="remuneration">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Combien vais-je gagner en alternance ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>Ta rémunération dépend notamment de ton âge, de ton niveau de formation, de ton année de contrat, du type de contrat et des éventuelles dispositions conventionnelles.</p>
+                <p>Tu peux t'appuyer sur cette grille (salaire brut mensuel, temps plein) :</p>
+
+                <!-- Grille : pour modifier un montant, change le chiffre dans la bonne case -->
+                <div class="table-wrap">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Année de contrat</th>
+                        <th scope="col">16-17 ans</th>
+                        <th scope="col">18-20 ans</th>
+                        <th scope="col">21-25 ans</th>
+                        <th scope="col">26 ans et +</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1<sup>re</sup> année</th>
+                        <td>504,10 €<small>27 % du SMIC</small></td>
+                        <td>802,82 €<small>43 % du SMIC</small></td>
+                        <td>989,52 €<small>53 % du SMIC</small></td>
+                        <td>1 867,02 €<small>100 % du SMIC</small></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2<sup>e</sup> année</th>
+                        <td>728,14 €<small>39 % du SMIC</small></td>
+                        <td>952,18 €<small>51 % du SMIC</small></td>
+                        <td>1 138,88 €<small>61 % du SMIC</small></td>
+                        <td>1 867,02 €<small>100 % du SMIC</small></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3<sup>e</sup> année</th>
+                        <td>1 026,86 €<small>55 % du SMIC</small></td>
+                        <td>1 250,90 €<small>67 % du SMIC</small></td>
+                        <td>1 456,28 €<small>78 % du SMIC</small></td>
+                        <td>1 867,02 €<small>100 % du SMIC</small></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="table-caption">Montants au 1er juin 2026, suite à la hausse du SMIC à 1 867,02 € brut/mois pour un temps plein de 151,67 h/mois. Sur mobile, fais glisser le tableau.</p>
+
+                <div class="note note--alert">
+                  <span class="note__label">Attention</span>
+                  <p>Nous jouons un rôle de conseil, mais ce sont <strong>les entreprises et les OPCO qui décident</strong> de la rémunération. Selon l'OPCO, la lecture de cette grille peut varier : ne confirme pas ces montants aux entreprises que tu rencontres, pour éviter de transmettre une information erronée.</p>
+                </div>
+              </div>
+            </details>
+
+          </div>
+        </section>
+
+        <!-- ============ 05. PENDANT MON ALTERNANCE ============ -->
+        <section class="faq-group" id="pendant">
+          <header class="faq-group__header">
+            <span class="faq-group__number">05.</span>
+            <div>
+              <h3 class="faq-group__title">Pendant mon alternance</h3>
+              <p class="faq-group__subtitle">Quand quelque chose change</p>
+            </div>
+          </header>
+
+          <div class="faq-list">
+
+            <details class="faq-item" id="modification">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Mon entreprise veut modifier mes conditions d'alternance, que faire ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>Ne valide pas seul(e) une modification importante.</p>
+                <p>Contacte le service Relations Entreprises pour vérifier que la modification est compatible avec ta formation et qu'elle peut être correctement formalisée.</p>
+              </div>
+            </details>
+
+          </div>
+        </section>
+
+        <!-- ============ 06. DIFFICULTÉ ============ -->
+        <section class="faq-group" id="difficulte">
+          <header class="faq-group__header">
+            <span class="faq-group__number">06.</span>
+            <div>
+              <h3 class="faq-group__title">Je rencontre une difficulté</h3>
+              <p class="faq-group__subtitle">Ne reste pas seul(e)</p>
+            </div>
+          </header>
+
+          <div class="faq-list">
+
+            <details class="faq-item" id="probleme">
+              <summary class="faq-item__question">
+                <span class="faq-item__title">Mon alternance se passe mal, que faire ?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>En cas de difficulté avec ton entreprise, contacte rapidement le service Relations Entreprises.</p>
+                <p>Plus une situation est signalée tôt, plus il est facile de trouver une solution.</p>
+              </div>
+            </details>
+
+          </div>
+        </section>
+
+        <!-- Affiché uniquement si la recherche ne trouve rien -->
+        <div class="faq-empty" data-faq-empty hidden>
+          <p><strong>Aucune question ne correspond à ta recherche.</strong></p>
+          <p>Essaie un autre mot, ou écris-nous directement.</p>
+          <a class="btn" href="#aide">Contacter le service</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         BESOIN D'AIDE + CONTACTS
+         Les cartes contacts sont générées par assets/js/contacts.js
+         ================================================================== -->
+    <section class="help" id="aide">
+      <div class="container">
+        <h2>Besoin d'aide ?</h2>
+        <p class="help__lead">
+          Tu n'as pas trouvé ta réponse ? Écris-nous en précisant ces informations :
+          on pourra t'aider plus vite.
+        </p>
+        <ol class="help__checklist">
+          <li>Ton nom et prénom</li>
+          <li>Ta filière</li>
+          <li>Ta question ou ton problème</li>
+          <li>Les démarches déjà effectuées</li>
+          <li>Les éventuels documents concernés</li>
+        </ol>
+
+        <h3 class="contacts__title">Le service Relations Entreprises</h3>
+        <div class="contacts" data-contacts></div>
+        <noscript>
+          <p>Contact : mathieu.faivret@ynov.com</p>
+        </noscript>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       FOOTER
+       ==================================================================== -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p class="site-footer__promise">Savoir Faire Évoluer</p>
+      <ul class="site-footer__links">
+        <li><a href="stage.html">FAQ Stage</a></li>
+        <li><a href="https://ymatch.ynov.com" target="_blank" rel="noopener">Ymatch</a></li>
+        <li><a href="https://www.ynov.com/campus/montpellier" target="_blank" rel="noopener">Ynov Montpellier</a></li>
+      </ul>
+      <p class="site-footer__copy">© Ynov Montpellier — Service Relations Entreprises</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/contacts.js"></script>
+  <script src="assets/js/faq.js"></script>
+</body>
+</html>
